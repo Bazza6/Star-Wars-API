@@ -1,29 +1,26 @@
-import { useState, useEffect } from "react"
 import Navbar from "./components/Navbar";
+import { Route, Routes } from "react-router-dom";
+import Main from "./pages/Main";
+import Home from "./pages/Home";
+import LogIn from "./pages/LogIn";
+import SignUp from "./pages/SignUp";
 
 
 function App() {
 
 
-  // en el state starships guardo todos los datos de las naves o solo los parametros que voy a usar?
 
-  let [starships, setStarships] = useState([]);
-
-
-
-  useEffect(() => {
-    fetch("https://swapi.dev/api/starships/")
-      .then(res => res.json())
-      .then(res => setStarships(res.results));
-  }, []);
-
-  let displayStarships = starships.map(starship => <div className="starCard"><h3>{starship.name}</h3><p>{starship.model}</p></div>)
 
   return (
     <>
       <Navbar />
-      <h1>Starships</h1>
-      {displayStarships}
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/main" element={<Main />} />
+        <Route path="/log-in" element={<LogIn />} />
+        <Route path="/sign-up" element={<SignUp />} />
+      </Routes>
     </>
   );
 }
