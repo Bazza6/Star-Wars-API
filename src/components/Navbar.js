@@ -1,28 +1,33 @@
-import { Link } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 
 function Navbar() {
 
     return (
         <>
             <nav className="navbar">
-                <Link to="/" >
+
+                <Link to="/home" >
                     <h1>STAR WARS</h1>
                 </Link>
-                <Link to="/log-in">
-                    LOGIN
-                </Link>
-                <Link to="/sign-up">
-                    sign-up
-                </Link>
+                <div>
+                    <Link to="/log-in">
+                        log in
+                    </Link>
+                    //
+                    <Link to="/sign-up">
+                        sign up
+                    </Link>
+                </div>
+
             </nav>
 
             <div className="lowerNavbar">
-                <Link to="/">
+                <NavLink activeClassName="active" to="/home">
                     <h2>HOME</h2>
-                </Link>
-                <Link to="/main">
+                </NavLink>
+                <NavLink activeClassName="active" to="/main">
                     <h2>STARSHIPS</h2>
-                </Link>
+                </NavLink>
             </div>
 
         </>

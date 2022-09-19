@@ -1,3 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+
+.cardBig {
+  height: 200px;
+  width: 800px;
+  border: green 2px solid;
+  background-color: rgb(146, 73, 73);
+  position: absolute;
+  left: 110px;
+  top: 110;
+  padding: 20px;
+  border-radius: 10px;
+}
+
 .navbar {
   border: dotted blue 2px;
   height: 100px;
@@ -15,15 +31,18 @@
   align-items: center;
   justify-content: center;
 }
+.active {
+  color: red;
+}
 
 .lowerNavbar h2 {
   margin: 5px;
 }
 
 .starCard {
-  background-color: rgb(80, 80, 80);
-  border: solid black 1px;
-  border-radius: 10px;
+  background-color: rgb(41, 41, 41);
+  border: solid rgb(21, 21, 21) 1px;
+  border-radius: 5px;
   margin: auto;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -33,7 +52,7 @@
 }
 
 body {
-  background-color: black;
+  background-color: rgb(22, 22, 22);
   color: white;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",

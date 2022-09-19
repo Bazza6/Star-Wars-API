@@ -1,29 +1,42 @@
 import { useState, useEffect } from "react"
+import DisplayStarships from "../components/DisplayStarships";
 
+function Main() {
 
-function Home() {
-
-    let [starships, setStarships] = useState([]);
+    let [starships, setStarships] = useState({
+        "count": 0,
+        "next": null,
+        "previous": null,
+        "results": [],
+    })
     // en el state starships guardo todos los datos de las naves o solo los parametros que voy a usar?
 
-
-
     useEffect(() => {
-        fetch("https://swapi.dev/api/starships/")
+        fetch("https://swapi.dev/api/starships")
             .then(res => res.json())
-            .then(res => setStarships(res.results));
+            .then(res => setStarships(res));
     }, []);
 
-    let displayStarships = starships.map(starship => <div className="starCard"><h3>{starship.name}</h3><p>{starship.model}</p></div>)
-
+    function previousPage() {
+        fetch(`${starships.previous}`)
+            .then(res => res.json())
+            .then(res => setStarships(res));
+    }
+    function nextPage() {
+        fetch(`${starships.next}`)
+            .then(res => res.json())
+            .then(res => setStarships(res));
+    }
 
     return (
-        <main>
-            <h1>Starships</h1>
-            {displayStarships}
-        </main>
+        <div>
+            <button onClick={previousPage}>previous</button>
+            <button onClick={nextPage}>next</button>
+
+            <DisplayStarships data={starships.results} />
+        </div>
 
     )
 }
 
-export default Home;
+export default Main;
