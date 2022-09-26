@@ -1,27 +1,30 @@
 import { Link } from "react-router-dom";
+import { Styled_P, Styled_Link, Styled_H3, Styled_SmallCard } from "../styled-component/styled";
+
 
 function DisplayStarships(props) {
 
 
-    let displayStarships = props.data.map(starship => { // aqui hago el MAP
+    let displayStarships = props.arrayStarships.map(starship => { // aqui hago el MAP
 
-
-        let ID = starship.url.slice(32);
-        ID = ID.slice(0, -1);
+        let ID = starship.url.slice(32, -1);
 
         return (
-            <div>
-                <div className="starCard">
-                    <h3>{starship.name}</h3>
-                    <p>{starship.model}</p>
-                    {/* <Link key={ID} to={`/starship/${ID}`}>more info</Link> */}
-                    <Link key={ID} to={`/starship/${ID}`}
-                        state={{
-                            name: starship.name
+            <Styled_SmallCard>
+                <Styled_Link key={ID}
+                    to={`/starship/${ID}`}
+                    state={{
+                        name: starship.name
+                    }}>
+                    <>
 
-                        }}>more info</Link>
-                </div>
-            </div>
+                        <Styled_H3>{starship.name}</Styled_H3>
+                        <Styled_P>{starship.model}</Styled_P>
+
+                    </>
+
+                </Styled_Link>
+            </Styled_SmallCard>
         )
     })
 

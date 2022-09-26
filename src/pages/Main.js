@@ -1,27 +1,45 @@
+import { useState, useEffect } from "react"
 import DisplayStarships from "../components/DisplayStarships";
+import { Styled_ButtonContainer, Styled_Button } from "../styled-component/styled";
 
-function Main(props) {
 
+function Main() {
 
+    let [starships, setStarships] = useState({
+        "count": 0,
+        "next": null,
+        "previous": null,
+        "results": [],
+    })
+
+    useEffect(() => {
+        fetch("https://swapi.dev/api/starships")
+            .then(res => res.json())
+            .then(res => setStarships(res));
+    }, []);
 
     function previousPage() {
-        fetch(`${props.starships.previous}`)
+        fetch(`${starships.previous}`)
             .then(res => res.json())
-            .then(res => props.setStarships(res));
+            .then(res => setStarships(res));
     }
     function nextPage() {
-        fetch(`${props.starships.next}`)
+        fetch(`${starships.next}`)
             .then(res => res.json())
-            .then(res => props.setStarships(res));
+            .then(res => setStarships(res));
     }
 
     return (
         <div>
-            <button onClick={previousPage}>previous</button>
-            <button onClick={nextPage}>next</button>
 
-            <DisplayStarships data={props.starships.results} /> {/* pasamos solo el array con las starships */}
-        </div>
+            <DisplayStarships arrayStarships={starships.results} /> {/* pasamos solo el array con las starships */}
+
+            {starships.results.length != 0 && <Styled_ButtonContainer >
+                <Styled_Button onClick={previousPage}>{'< '}prev</Styled_Button>
+                <Styled_Button onClick={nextPage}>next{' >'}</Styled_Button>
+            </Styled_ButtonContainer>}
+
+        </div >
 
     )
 }

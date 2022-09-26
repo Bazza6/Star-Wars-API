@@ -1,36 +1,46 @@
 import { Link, NavLink } from "react-router-dom"
+import {
+    Styled_LowerNav, Styled_TopNav, Styled_Hidden, Styled_Span,
+    Logo, Styled_Link, Styled_NavLink,
+} from "../styled-component/styled";
 
 function Navbar() {
 
     return (
-        <>
-            <nav className="navbar">
+        <div>
+            <Styled_TopNav>
+                <Styled_Hidden>log in // sign up</Styled_Hidden>
 
                 <Link to="/home" >
-                    <h1>STAR WARS</h1>
+                    <Logo src="./star-wars-logo.png"></Logo>
                 </Link>
                 <div>
-                    <Link to="/log-in">
-                        log in
-                    </Link>
-                    //
-                    <Link to="/sign-up">
-                        sign up
-                    </Link>
+                    <Styled_Link to="/log-in">
+                        <Styled_Span>log in</Styled_Span>
+                    </Styled_Link>
+                    <Styled_Span>{' '}//{' '}</Styled_Span>
+                    <Styled_Link to="/sign-up">
+                        <Styled_Span>sign up</Styled_Span>
+
+                    </Styled_Link>
                 </div>
+            </Styled_TopNav>
 
-            </nav>
+            <Styled_LowerNav>
 
-            <div className="lowerNavbar">
-                <NavLink activeClassName="active" to="/home">
-                    <h2>HOME</h2>
-                </NavLink>
-                <NavLink activeClassName="active" to="/main">
-                    <h2>STARSHIPS</h2>
-                </NavLink>
-            </div>
+                <Styled_NavLink
+                    activeClassName="active"
 
-        </>
+                    to="/home">
+                    <h3>HOME</h3>
+                </Styled_NavLink>
+
+                <Styled_NavLink activeClassName="active" to="/main">
+                    <h3>STARSHIPS</h3>
+                </Styled_NavLink>
+            </Styled_LowerNav>
+
+        </div>
     )
 }
 

@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react"
 import Navbar from "./components/Navbar";
 import { Route, Routes } from "react-router-dom";
 import Main from "./pages/Main";
@@ -6,38 +5,34 @@ import Home from "./pages/Home";
 import LogIn from "./pages/LogIn";
 import SignUp from "./pages/SignUp";
 import Starship from "./components/Starship";
-
+import { Styled_background } from "./styled-component/styled";
+import { useState } from "react";
 
 function App() {
 
-  let [starships, setStarships] = useState({
-    "count": 0,
-    "next": null,
-    "previous": null,
-    "results": [],
-  })
+  const [isAutheticated, setisAutheticated] = useState(false);
 
-  useEffect(() => {
-    fetch("https://swapi.dev/api/starships")
-      .then(res => res.json())
-      .then(res => setStarships(res));
-  }, []);
 
   return (
     <>
-      <Navbar />
+      <Styled_background>
+        <Navbar />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/home" element={<Home />} />
 
-        <Route path="/main" element={<Main starships={starships} setStarships={setStarships} />} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
 
-        <Route path="/starship/:ID" element={<Starship starships={starships} />} />
+          <Route path="/main" element={<Main />} />
 
-        <Route path="/log-in" element={<LogIn />} />
-        <Route path="/sign-up" element={<SignUp />} />
-      </Routes>
+          <Route path="/starship/:ID" element={<Starship />} />
+
+          <Route path="/log-in" element={<LogIn setisAutheticated={setisAutheticated} />} />
+          <Route path="/sign-up" element={<SignUp />} />
+        </Routes>
+
+
+      </Styled_background>
     </>
   );
 }

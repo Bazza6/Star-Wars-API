@@ -1,7 +1,12 @@
-* {
-  box-sizing: border-box;
+a.active {
+  color: white;
 }
 
+body {
+  display: block;
+  margin: 0px;
+}
+/* 
 .cardBig {
   height: 200px;
   width: 800px;
@@ -14,29 +19,10 @@
   border-radius: 10px;
 }
 
-.navbar {
-  border: dotted blue 2px;
-  height: 100px;
-  width: 100%;
-  background-color: rgb(0, 205, 205);
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
 
-.lowerNavbar {
-  border: solid red 1px;
-  background-color: rgb(0, 205, 205);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.active {
-  color: red;
-}
 
 .lowerNavbar h2 {
-  margin: 5px;
+  margin: 50px;
 }
 
 .starCard {
@@ -48,7 +34,7 @@
   margin-bottom: 10px;
   padding: 5px;
   width: 50%;
-  /* text-align: center; */
+  /* text-align: center; 
 }
 
 body {
@@ -65,4 +51,4 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
+} */
