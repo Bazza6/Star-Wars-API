@@ -12,9 +12,7 @@ function SignUp() {
         let def = [];
         let local = JSON.parse(localStorage.getItem("users"));
         return local ? local : def;
-    }
-
-    );
+    });
 
     function handleChange(e) {
         let { name, value } = e.target;
@@ -26,12 +24,10 @@ function SignUp() {
         })
     }
 
-
     function addAccount() {
-        setUsers(prev => [...prev, user])
-        navigate('/log-in') // así se agrega un nuevo objeto a un array
+        setUsers(prev => [...prev, user]) // así se agrega un nuevo objeto a un array
+        //navigate('/log-in') 
     }
-
 
 
     // LocalStorage SET
@@ -53,7 +49,6 @@ function SignUp() {
 
             <p><input type="checkbox" value="asdfsadf" /><span>Yes! I would like to receive by email special offers
                 and updates about Lucasfilm Ltd. and other products and services from</span></p>
-
 
             <button onClick={addAccount}>create Account</button>
         </Styled_Container>

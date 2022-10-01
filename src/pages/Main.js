@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import DisplayStarships from "../components/DisplayStarships";
-import { Styled_ButtonContainer, Styled_Button } from "../styled-component/styled";
+import { Styled_ButtonContainer, Styled_Button, Loading } from "../styled-component/styled";
 
 
 function Main() {
@@ -31,6 +31,8 @@ function Main() {
 
     return (
         <div>
+            {starships.results.length === 0 && <Loading></Loading>}
+
 
             <DisplayStarships arrayStarships={starships.results} /> {/* pasamos solo el array con las starships */}
 

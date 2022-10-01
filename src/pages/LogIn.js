@@ -53,11 +53,13 @@ function Login(props) {
 
     return (
         <Styled_Container>
-            <h1>Login</h1>
+
+
 
             <p><input type="text" name="logName" placeholder="Nombre..." onChange={handleChange} value={logUser.logName} /></p>
 
             <p><input type="password" name="logPassword" placeholder="password..." onChange={handleChange} value={logUser.logPassword} /></p>
+            <p>🥴</p>
 
             <button onClick={logIn}>Log In</button>
 
