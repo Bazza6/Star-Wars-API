@@ -22,6 +22,8 @@ body{
 h2 {
 	color: lightgray;
 }
+p{
+	color: yellow;
+}
 `;
-
 export default GlobalStyle;

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import { Styled_P, Styled_Link, Styled_H3, Styled_SmallCard } from "../styled-component/styled";
 
 
@@ -14,11 +14,12 @@ function DisplayStarships(props) {
                 <Styled_Link key={ID}
                     to={`/starship/${ID}`}
                     state={{
-                        name: starship.name
+                        name: starship.name,
+                        pilots: starship.pilots,
+                        movies: starship.films
                     }}>
                     <>
-
-                        <Styled_H3>{starship.name}</Styled_H3>
+                        <Styled_H3>{starship.name.toUpperCase()}</Styled_H3>
                         <Styled_P>{starship.model}</Styled_P>
 
                     </>

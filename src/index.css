@@ -1,7 +1,12 @@
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans:400,700);
+
 a.active {
   color: white;
 }
 
+* {
+  font-family: "Droid Sans", arial, verdana, sans-serif;
+}
 /* body {
   display: block;
   margin: 0px;
