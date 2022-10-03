@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Styled_MoviesCard } from "../styled-component/styled";
 
 
 function Movies(props) {
@@ -23,10 +24,10 @@ function Movies(props) {
 
 
     return (
-        <div>
+        <Styled_MoviesCard>
             <p>MOVIES:</p>
             <p>{movies.length > 0 && displayMovies}</p>
-        </div>
+        </Styled_MoviesCard>
     )
 }
 

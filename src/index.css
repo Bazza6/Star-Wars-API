@@ -1,11 +1,16 @@
 @import url(https://fonts.googleapis.com/css?family=Droid+Sans:400,700);
 
-a.active {
+/* .active {
   color: white;
-}
+  border-bottom: 2px solid blue;
+} */
 
 * {
   font-family: "Droid Sans", arial, verdana, sans-serif;
+}
+
+p {
+  color: lightgray;
 }
 /* body {
   display: block;

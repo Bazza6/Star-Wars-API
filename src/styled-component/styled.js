@@ -92,7 +92,7 @@ color: lightgrey;
 `;
 const Styled_Container = styled.div`
 margin-top: 30px;;
-background-color: grey;
+background-color: rgb(41, 41, 41);
 margin-left: auto;
 margin-right: auto;
 width: 300px;
@@ -106,22 +106,46 @@ color: lightgrey;
 `;
 
 const Styled_Card = styled.div`
+max-width: 700px;
 width: 60%;
+border-radius: 12px;
+padding: 18px;
+background-color: black;
+margin-top: 40px;
 margin-left: auto;
 margin-right: auto;
-border: dotted red 2px;
+box-shadow: 0px 0px 186px -32px rgba(255,255,255,0.74);
 `;
 
 const Styled_Img = styled.img`
-//background-color: green;
   width: 100%;
   display: block;
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
   //width: 50%;
-  border-bottom: red solid 2px;
+  border-bottom: red solid 3px;
   `;
+
+const Styled_ContainerDetails = styled.div`
+display:flex;
+flex-wrap: wrap;
+//border: dotted green 2px;
+justify-content: space-between;
+`;
+
+const Styled_PilotsCard = styled.div`
+width: 45%;
+background-color: rgb(41, 41, 41);
+border-radius: 8px;
+padding: 12px;
+`;
+const Styled_MoviesCard = styled.div`
+width: 45%;
+background-color: rgb(41, 41, 41);
+border-radius: 8px;
+padding: 12px;
+`;
 
 // STAR-WARS style stuff
 // los keyframes tienen que ir primero sino no funciona nada!!!
@@ -277,12 +301,15 @@ const Loading = styled.div`
   width: 0;
   height: 0;
   margin: 8px;
+  margin-top: 100px;
+
   box-sizing: border-box;
   border: 32px solid #fff;
   border-color: #fff transparent #fff transparent;
   animation: ${hourglass} 1.2s infinite;
 }
 `;
+
 
 export {
   Styled_LowerNav,
@@ -306,5 +333,8 @@ export {
   Styled_TitleLogo,
   Styled_Titles,
   Styled_TitlesContent,
-  Loading
+  Loading,
+  Styled_ContainerDetails,
+  Styled_PilotsCard,
+  Styled_MoviesCard
 };

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Styled_PilotsCard } from "../styled-component/styled";
 
 
 function Pilots(props) {
@@ -23,10 +24,10 @@ function Pilots(props) {
 
 
     return (
-        <div>
+        <Styled_PilotsCard>
             <p>PILOTI:</p>
             <p>{piloti.length > 0 && displayPiloti}</p>
-        </div>
+        </Styled_PilotsCard>
     )
 }
 

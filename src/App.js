@@ -1,7 +1,6 @@
 import Navbar from "./components/Navbar";
-import { Route, Routes } from "react-router-dom";
+import { Route, Router, Routes, } from "react-router-dom";
 import Main from "./pages/Main";
-import Home from "./pages/OLD____Home";
 import LogIn from "./pages/LogIn";
 import SignUp from "./pages/SignUp";
 import Starship from "./components/Starship";
@@ -9,6 +8,7 @@ import { Styled_background } from "./styled-component/styled";
 import { useState } from "react";
 import HomeExperiment from "./pages/HomeExperiment";
 import GlobalStyle from "./styled-component/globalStyles";
+import GuardedRoute from "./components/GuardedRoute";
 
 
 function App() {
@@ -23,19 +23,27 @@ function App() {
       <Styled_background>
         <Navbar />
 
-
+        {/* ????? */}
         <Routes>
           <Route path="/" element={<HomeExperiment />} />
           {/* <Route path="/home" element={<Home />} /> */}
           <Route path="/home" element={<HomeExperiment />} />
 
-          <Route path="/main" element={<Main />} />
+          <Route
+            path="/main"
+            element={
+              <GuardedRoute auth={isAutheticated}>
+                <Main />
+              </GuardedRoute>
+            }
+          />
 
           <Route path="/starship/:ID" element={<Starship />} />
 
           <Route path="/log-in" element={<LogIn setisAutheticated={setisAutheticated} />} />
           <Route path="/sign-up" element={<SignUp />} />
         </Routes>
+
 
 
       </Styled_background>

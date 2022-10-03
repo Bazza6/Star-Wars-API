@@ -18,12 +18,16 @@ body{
 	font-family: sans-serif;
 	height: 100%
 }
+.active{
+	color: white;
+	border-bottom: 2px solid blue;
+}
 
 h2 {
 	color: lightgray;
 }
-p{
+/* p{
 	color: yellow;
-}
+} */
 `;
 export default GlobalStyle;

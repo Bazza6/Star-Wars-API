@@ -17,7 +17,7 @@ function Navbar() {
                 </Link>
                 <div>
                     <Styled_Link to="/log-in">
-                        <Styled_Span>log in</Styled_Span>
+                        <Styled_Span className="gatto">log in</Styled_Span>
                     </Styled_Link>
                     <Styled_Span>{' '}//{' '}</Styled_Span>
                     <Styled_Link to="/sign-up">
@@ -30,13 +30,17 @@ function Navbar() {
             <Styled_LowerNav>
 
                 <Styled_NavLink
-                    activeClassName="active"
 
+                    className={({ isActive }) => isActive ? "active" : ""}
                     to="/home">
                     <h3>HOME</h3>
                 </Styled_NavLink>
 
-                <Styled_NavLink activeClassName="active" to="/main">
+                <Styled_NavLink
+
+                    className={({ isActive }) => isActive ? "active" : ""}
+
+                    to="/main">
                     <h3>STARSHIPS</h3>
                 </Styled_NavLink>
             </Styled_LowerNav>

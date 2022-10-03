@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
-import { Styled_Card, Styled_Img } from "../styled-component/styled";
+import { Styled_Card, Styled_Img, Styled_ContainerDetails } from "../styled-component/styled";
 import notAvaiable from "./img/image-no-avaiable.jpeg";
 import Movies from "./Movies";
 import Pilots from "./Pilots";
@@ -26,8 +26,10 @@ function Starship() {
 
                 </Styled_Img>
                 <h2>{location.state.name.toUpperCase()}</h2>
-                <Pilots arrayPilotsURL={location.state.pilots} />
-                <Movies arrayMoviesURL={location.state.movies} />
+                <Styled_ContainerDetails>
+                    <Pilots arrayPilotsURL={location.state.pilots} />
+                    <Movies arrayMoviesURL={location.state.movies} />
+                </Styled_ContainerDetails>
 
             </Styled_Card>
 

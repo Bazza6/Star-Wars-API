@@ -22,13 +22,7 @@ function Login(props) {
 
     function logIn() {
         let arrayUser = JSON.parse(localStorage.getItem("users"));
-        // let { name, value } = e.target;
-        // setLogUser(prev => {
-        //     return {
-        //         ...prev,
-        //         [name]: value,
-        //     }
-        // })
+
         console.log("logUser1", logUser);
         console.log("arrayUser", arrayUser);
 
@@ -54,12 +48,11 @@ function Login(props) {
     return (
         <Styled_Container>
 
-
+            <h2>LOG IN</h2>
 
             <p><input type="text" name="logName" placeholder="Nombre..." onChange={handleChange} value={logUser.logName} /></p>
 
             <p><input type="password" name="logPassword" placeholder="password..." onChange={handleChange} value={logUser.logPassword} /></p>
-            <p>🥴</p>
 
             <button onClick={logIn}>Log In</button>
 
