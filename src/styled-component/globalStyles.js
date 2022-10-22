@@ -1,33 +1,30 @@
 import { createGlobalStyle } from "styled-components";
+import background from "./img/background-stars-desktop.jpeg"
+
 
 const GlobalStyle = createGlobalStyle`
 
+* {
+   font-family: "monospace", arial, verdana, sans-serif;
+  letter-spacing: 1.5px;
+  font-weight: lighter;
+}
+
 html {
 	box-sizing: border-box;
-	height: 100%;
 }
-/* *,
-*:before,
-*:after {
-	box-sizing: inherit;
-} */
 
 body{
 	margin: 0;
 	padding: 0;
-	font-family: sans-serif;
-	height: 100%
-}
-.active{
-	color: white;
-	border-bottom: 2px solid blue;
-}
-
-h2 {
+	background-image: url(${background});
 	color: lightgray;
 }
-/* p{
-	color: yellow;
-} */
+
+/* esto sirve para dar estilo a los lik activos (los NavLink)*/
+.active{
+	color: white;
+}
+
 `;
 export default GlobalStyle;

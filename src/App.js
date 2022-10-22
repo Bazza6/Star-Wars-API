@@ -6,7 +6,7 @@ import SignUp from "./pages/SignUp";
 import Starship from "./components/Starship";
 import { Styled_background } from "./styled-component/styled";
 import { useState } from "react";
-import HomeExperiment from "./pages/HomeExperiment";
+import Home from "./pages/Home";
 import GlobalStyle from "./styled-component/globalStyles";
 import GuardedRoute from "./components/GuardedRoute";
 
@@ -15,19 +15,16 @@ function App() {
 
   const [isAutheticated, setisAutheticated] = useState(false);
 
-
   return (
     <>
       <GlobalStyle />
-
       <Styled_background>
         <Navbar />
 
-        {/* ????? */}
         <Routes>
-          <Route path="/" element={<HomeExperiment />} />
+          <Route path="/" element={<Home />} />
           {/* <Route path="/home" element={<Home />} /> */}
-          <Route path="/home" element={<HomeExperiment />} />
+          <Route path="/home" element={<Home />} />
 
           <Route
             path="/main"

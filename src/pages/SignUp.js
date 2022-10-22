@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { Styled_Container, Styled_Link } from "../styled-component/styled";
+import { Styled_ButtonLog, Styled_Container, Styled_Link } from "../styled-component/styled";
 
 function SignUp() {
 
-    const navigate = useNavigate();
-
     const [isRegister, setIsRegister] = useState(false);
-    const [user, setUser] = useState({});
+    const [user, setUser] = useState({
+        name: "",
+        password: ""
+    });
     const [users, setUsers] = useState(() => {
         let def = [];
         let local = JSON.parse(localStorage.getItem("users"));
@@ -29,9 +29,8 @@ function SignUp() {
         if (user.name.length === 0 || user.password.length === 0) {
             alert("nombre y password son obligatorios")
         } else {
-            setUsers(prev => [...prev, user]) // así se agrega un nuevo objeto a un array
+            setUsers(prev => [...prev, user]) // agregamos un nuevo objeto a un array
             setIsRegister(true);
-            // si pongo aqui el navigate to log-in no me guarda el user en localstorage, "no le da tiempo.."
         }
     }
 
@@ -52,14 +51,14 @@ function SignUp() {
 
                 <p><input type="password" name="password" placeholder="password..." onChange={handleChange} value={user.password} /></p>
 
-                <p><input type="checkbox" value="asdfsadf" /><span>Yes! I would like to receive by email special offers
-                    and updates about Lucasfilm Ltd. and other bla bla bla</span></p>
+                <p><input type="checkbox" value="" /><span>Yes! I would like to receive by email special offers
+                    and updates about bla bla bla</span></p>
 
-                <button onClick={addAccount}>create Account</button>
+                <Styled_ButtonLog onClick={addAccount}>create Account</Styled_ButtonLog>
             </Styled_Container> :
                 <Styled_Container>
                     <h1>Usuario creado con exito!</h1>
-                    por favor ir al <Styled_Link to="/log-in"><h1>LOG IN</h1></Styled_Link>
+                    por favor ir al <Styled_Link to="/log-in"><h2>LOG IN</h2></Styled_Link>
                 </Styled_Container>}
 
 

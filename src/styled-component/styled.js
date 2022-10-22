@@ -5,25 +5,32 @@ import background from "./img/background-stars-desktop.jpeg"
 const Styled_TopNav = styled.div`
   height: 150px;
   width: 100%;
-  background-color: black;
+  background-color: rgb(0,0,0, 0.8);
   display: flex;
   align-items: center;
   justify-content: space-around;
+  position: relative;
+  z-index: 2;
+
 `;
 const Styled_LowerNav = styled.div`
-  //box-sizing: border-box;
-  border: solid grey 1px;
-  background-color: black;
+  border-top: solid grey 1px;
+  border-bottom: solid grey 1px;
+  background-color: rgb(0,0,0, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  margin-bottom: 2rem;
+  z-index: 2;
+
 `;
 const Styled_Span = styled.span`
 color: lightgrey;
 `;
 const Styled_P = styled.p`
-color: lightgrey;
 text-decoration: none;
+color: ${props => props.yellow ? " #ff6" : "lightgrey"};
 `;
 const Styled_H3 = styled.h3`
 color: lightgrey;
@@ -34,10 +41,9 @@ const Styled_Hidden = styled(Styled_P)`
   visibility: hidden;
 `;
 const Logo = styled.img`
-height: 80px;
+height: 82px;
 `;
 const Styled_SmallCard = styled.div`
-border: solid red 3px;
 background-color: rgb(41, 41, 41);
   border: solid rgb(21, 21, 21) 1px;
   border-radius: 5px;
@@ -49,7 +55,6 @@ background-color: rgb(41, 41, 41);
 `;
 const Styled_background = styled.div`
 background-image: url(${background});
-min-height: 2000px;
 `;
 
 const Styled_Link = styled(Link)`
@@ -82,6 +87,24 @@ const Styled_Button = styled.button`
   color:white
 }
 `;
+const Styled_ButtonLog = styled.button`
+  //text-decoration: none;
+  width: 150px;
+  text-align: center;
+  margin-top: 2rem;
+  color:lightgrey;
+  background-color: black;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  padding: 10px 10px;
+  cursor: pointer;
+&:hover{
+  background-color: yellow;
+
+  color:black
+}
+`;
 const Styled_WelcomePage = styled.div`
 padding: 30px;
 text-align: center;
@@ -91,6 +114,7 @@ justify-content: center;
 color: lightgrey;
 `;
 const Styled_Container = styled.div`
+border-radius: 5px;
 margin-top: 30px;;
 background-color: rgb(41, 41, 41);
 margin-left: auto;
@@ -106,14 +130,17 @@ color: lightgrey;
 `;
 
 const Styled_Card = styled.div`
+color: darkgray;
+font-size: 0.9rem;
 max-width: 700px;
 width: 60%;
 border-radius: 12px;
 padding: 18px;
 background-color: black;
-margin-top: 40px;
+margin-top: 50px;
 margin-left: auto;
 margin-right: auto;
+margin-bottom: 50px;
 box-shadow: 0px 0px 186px -32px rgba(255,255,255,0.74);
 `;
 
@@ -123,32 +150,29 @@ const Styled_Img = styled.img`
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
-  //width: 50%;
   border-bottom: red solid 3px;
   `;
 
 const Styled_ContainerDetails = styled.div`
 display:flex;
-flex-wrap: wrap;
-//border: dotted green 2px;
-justify-content: space-between;
+flex-wrap: no-wrap;
+gap:20px;
 `;
 
-const Styled_PilotsCard = styled.div`
-width: 45%;
+const Styled_PilotsAndMoviesCard = styled.div`
+color: lightgray;
+width: 100%;
 background-color: rgb(41, 41, 41);
-border-radius: 8px;
+border-radius: 5px;
 padding: 12px;
 `;
-const Styled_MoviesCard = styled.div`
-width: 45%;
-background-color: rgb(41, 41, 41);
-border-radius: 8px;
-padding: 12px;
+const Styled_GreyText = styled.span`
+color: rgb(70,70,70);
+font-size:large;
 `;
 
 // STAR-WARS style stuff
-// los keyframes tienen que ir primero sino no funciona nada!!!
+// los keyframes tienen que ir primero!
 const intro = keyframes`
 0% {
      opacity: 1;
@@ -177,20 +201,17 @@ const logo = keyframes`
 
 const Styled_IntroAzul = styled.p`
   text-align: center;
-  //border: dotted 2px red;
   color: #ff6;
+  margin-top: 150px;
   margin-left: auto;
   margin-right: auto;
-  //position: relative;
-  width: 16em;
+  width: 18em;
   font-size: 200%;
   font-weight: 400;
-  //margin: 20% auto;
   color: #4ee;
   opacity: 0;
   z-index: 1;
-  //display: inline-block;
-  animation: ${intro} 2s ease-out;
+  animation: ${intro} 1.5s ease-out;
   `;
 
 const Styled_TitleLogo = styled.h1`
@@ -198,7 +219,7 @@ const Styled_TitleLogo = styled.h1`
   position: absolute;
   width: 2.6em;
   left: 50%;
-  top: 25%;
+  top: 20%;
   font-size: 10em;
   text-align: center;
   line-height: 0.8em;
@@ -266,12 +287,12 @@ const scroll = keyframes`
 `;
 
 const Styled_TitlesContent = styled.div`
-position: absolute;
+  position: absolute;
   top: 100%;
   animation: ${scroll} 100s linear 4s infinite;
 `;
 
-const hourglass = keyframes`
+const hourglass = keyframes` 
 0% {
     transform: rotate(0);
     animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
@@ -286,14 +307,9 @@ const hourglass = keyframes`
 `;
 
 const Loading = styled.div`
-  //border: dotted red 2px;
   margin: auto;
-
-  //display: inline-block;
-  //position: relative;
   width: 80px;
   height: 80px;
-
   &:after {
   content: " ";
   display: block;
@@ -310,7 +326,6 @@ const Loading = styled.div`
 }
 `;
 
-
 export {
   Styled_LowerNav,
   Styled_TopNav,
@@ -319,12 +334,14 @@ export {
   Styled_P,
   Styled_H3,
   Logo,
+  Styled_GreyText,
   Styled_Link,
   Styled_NavLink,
   Styled_background,
   Styled_SmallCard,
   Styled_ButtonContainer,
   Styled_Button,
+  Styled_ButtonLog,
   Styled_WelcomePage,
   Styled_Container,
   Styled_Card,
@@ -335,6 +352,5 @@ export {
   Styled_TitlesContent,
   Loading,
   Styled_ContainerDetails,
-  Styled_PilotsCard,
-  Styled_MoviesCard
+  Styled_PilotsAndMoviesCard,
 };

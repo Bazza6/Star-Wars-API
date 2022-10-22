@@ -2,7 +2,7 @@ import logo from "./img/star-wars-logo.png"
 import { Link, NavLink } from "react-router-dom"
 import {
     Styled_LowerNav, Styled_TopNav, Styled_Hidden, Styled_Span,
-    Logo, Styled_Link, Styled_NavLink
+    Logo, Styled_Link, Styled_NavLink, Styled_GreyText
 } from "../styled-component/styled";
 
 function Navbar() {
@@ -19,7 +19,7 @@ function Navbar() {
                     <Styled_Link to="/log-in">
                         <Styled_Span className="gatto">log in</Styled_Span>
                     </Styled_Link>
-                    <Styled_Span>{' '}//{' '}</Styled_Span>
+                    <Styled_Span>{' '}<Styled_GreyText>//</Styled_GreyText>{' '}</Styled_Span>
                     <Styled_Link to="/sign-up">
                         <Styled_Span>sign up</Styled_Span>
 

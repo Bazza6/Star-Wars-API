@@ -1,9 +1,6 @@
-//import { Link } from "react-router-dom";
 import { Styled_P, Styled_Link, Styled_H3, Styled_SmallCard } from "../styled-component/styled";
 
-
 function DisplayStarships(props) {
-
 
     let displayStarships = props.arrayStarships.map(starship => { // aqui hago el MAP
 
@@ -16,14 +13,19 @@ function DisplayStarships(props) {
                     state={{
                         name: starship.name,
                         pilots: starship.pilots,
-                        movies: starship.films
+                        movies: starship.films,
+                        manufacturer: starship.manufacturer,
+                        cost_in_credits: starship.cost_in_credits,
+                        length: starship.length,
+                        passengers: starship.passengers,
+                        cargo_capacity: starship.cargo_capacity,
+                        hyperdrive_rating: starship.hyperdrive_rating,
+                        max_atmosphering_speed: starship.max_atmosphering_speed
                     }}>
                     <>
                         <Styled_H3>{starship.name.toUpperCase()}</Styled_H3>
                         <Styled_P>{starship.model}</Styled_P>
-
                     </>
-
                 </Styled_Link>
             </Styled_SmallCard>
         )
@@ -31,7 +33,6 @@ function DisplayStarships(props) {
 
     return (
         <div>
-            <h1>STARSHIPS</h1>
             {displayStarships}
         </div>
     )

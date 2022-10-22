@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Styled_PilotsCard } from "../styled-component/styled";
+import { Styled_PilotsAndMoviesCard } from "../styled-component/styled";
 
 
 function Pilots(props) {
@@ -8,7 +8,6 @@ function Pilots(props) {
     console.log(props.arrayPilotsURL);
 
     useEffect(() => {
-
         props.arrayPilotsURL.map(pilotURL => {
             fetch(pilotURL)
                 .then(res => res.json())
@@ -16,18 +15,13 @@ function Pilots(props) {
         });
     }, []);
 
-
-    console.log("useState piloti", piloti);
-
     let displayPiloti = piloti.map(pilota => <p>{pilota.name}</p>)
 
-
-
     return (
-        <Styled_PilotsCard>
-            <p>PILOTI:</p>
+        <Styled_PilotsAndMoviesCard>
+            <p>PILOTOS:</p>
             <p>{piloti.length > 0 && displayPiloti}</p>
-        </Styled_PilotsCard>
+        </Styled_PilotsAndMoviesCard>
     )
 }
 

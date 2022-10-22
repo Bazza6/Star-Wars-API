@@ -33,7 +33,6 @@ function Main() {
         <div>
             {starships.results.length === 0 && <Loading></Loading>}
 
-
             <DisplayStarships arrayStarships={starships.results} /> {/* pasamos solo el array con las starships */}
 
             {starships.results.length != 0 && <Styled_ButtonContainer >
