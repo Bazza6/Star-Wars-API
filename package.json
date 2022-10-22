@@ -2,7 +2,6 @@
   "name": "star-wars",
   "version": "0.1.0",
   "homepage": "https://bazza6.github.io/Star-Wars-API",
-
   "private": true,
   "dependencies": {
     "@testing-library/user-event": "^13.5.0",
@@ -41,6 +40,7 @@
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0"
+    "@testing-library/react": "^13.4.0",
+    "gh-pages": "^4.0.0"
   }
 }
